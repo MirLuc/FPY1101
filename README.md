@@ -2,7 +2,7 @@
 
 Python
 
-- [aa](https://www.newgrounds.com/portal/view/770371)
+- [aa](https://www.youtube.com/watch?v=BtLSaxRnIhc)
 
 # Getting Started
 

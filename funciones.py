@@ -1,1 +1,2 @@
-asd
+menu()
+  print("pe)

@@ -1,6 +1,9 @@
 #instalar githun desktop en pc personal
 import os
+import funciones as fn #type: ignore
 
+
+fn.menu()
 # Definición de la colección de cargos
 cargos_disponibles = ["CEO", "Desarrollador", "Analista de datos"]
 

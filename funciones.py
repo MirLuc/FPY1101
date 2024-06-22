@@ -1,2 +1,2 @@
 menu()
-  print("pe)
+  print("pe")

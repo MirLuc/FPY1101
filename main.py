@@ -1,7 +1,7 @@
 import os
 import funciones as fn #type: ignore
 
-fn.menu()
+fn.main()
 
 fn.registrar_trabajador()
 

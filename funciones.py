@@ -1,19 +1,5 @@
 import os
-lista = []
-
-def registrar():
-    print()
-def listar():
-    print()
-def imprimir():
-    print()
-def menu():
-    print("test")
-
-# Definición de la colección de cargos
 cargos_disponibles = ["CEO", "Desarrollador", "Analista de datos"]
-
-# Función para registrar un trabajador
 def registrar_trabajador():
     print("\nRegistro de Trabajador")
     nombre = input("Nombre: ")
@@ -23,11 +9,10 @@ def registrar_trabajador():
         print(f"Cargo no válido. Los cargos disponibles son: {', '.join(cargos_disponibles)}")
         cargo = input("Cargo: ")
     sueldo_bruto = float(input("Sueldo Bruto: "))
-    desc_salud = sueldo_bruto * 0.07  # Descuento salud (7%)
-    desc_afp = sueldo_bruto * 0.12    # Descuento AFP (12%)
+    desc_salud = sueldo_bruto * 0.07  
+    desc_afp = sueldo_bruto * 0.12   
     liquido_pagar = sueldo_bruto - desc_salud - desc_afp
     
-    # Mostrar los resultados
     print("\nResumen del Trabajador Registrado:")
     print("Nombre:", nombre)
     print("Apellido:", apellido)
@@ -35,11 +20,8 @@ def registrar_trabajador():
     print("Sueldo Bruto:", sueldo_bruto)
     print("Descuento Salud (7%):", desc_salud)
     print("Descuento AFP (12%):", desc_afp)
-    print("Líquido a Pagar:", liquido_pagar)
-    
-    # Retornar los datos como una tupla
+    print("Líquido a Pagar:", liquido_pagar)   
     return (nombre, apellido, cargo, sueldo_bruto, desc_salud, desc_afp, liquido_pagar)
-
 def listar_trabajadores(trabajadores):
     print("\nLista de Trabajadores:")
     if not trabajadores:
@@ -60,8 +42,7 @@ def imprimir_planilla(trabajadores):
     if not trabajadores:
         print("No hay trabajadores registrados para imprimir la planilla.")
         return
-    
-    cargo_seleccionado = input(f"Seleccione un cargo ({', '.join(cargos_disponibles)}) o escriba 'todos' para imprimir todos: ")
+        cargo_seleccionado = input(f"Seleccione un cargo ({', '.join(cargos_disponibles)}) o escriba 'todos' para imprimir todos: ")
     if cargo_seleccionado.lower() == 'todos':
         archivo_nombre = "planilla_todos.txt"
     elif cargo_seleccionado in cargos_disponibles:
@@ -69,7 +50,6 @@ def imprimir_planilla(trabajadores):
     else:
         print("Cargo no válido.")
         return
-    
     with open(archivo_nombre, 'w') as archivo:
         archivo.write("Planilla de Sueldos\n\n")
         for trabajador in trabajadores:
@@ -84,8 +64,6 @@ def imprimir_planilla(trabajadores):
                 archivo.write("\n")
     
     print(f"Se ha generado el archivo '{archivo_nombre}' con la planilla de sueldos.")
-
-# Función principal del programa
 def main():
     trabajadores = []
     
@@ -95,9 +73,7 @@ def main():
         print("2. Listar Todos los Trabajadores")
         print("3. Imprimir Planilla de Sueldos")
         print("4. Salir del Programa")
-        
         opcion = input("Seleccione una opción: ")
-        
         if opcion == '1':
             trabajador = registrar_trabajador()
             trabajadores.append(trabajador)
@@ -110,6 +86,5 @@ def main():
             break
         else:
             print("Opción no válida. Por favor, seleccione una opción válida.")
-
 if __name__ == "__main__":
     main()
